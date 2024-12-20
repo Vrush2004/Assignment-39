@@ -1,4 +1,5 @@
-const board = ['O', -1, -1, -1, -1, -1, -1, -1, -1];
+const board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+let currentPlayer = "X";
 
 function renderBoard(){
     const allBoxes = document.querySelectorAll('.box');
@@ -14,3 +15,36 @@ function renderBoard(){
     })
 }
 renderBoard()
+
+function selectBox(boxNumber){
+    if(board[boxNumber] !== -1){
+        alert("Invalid Move...")
+        return;
+    }
+    board[boxNumber] = currentPlayer;
+    renderBoard();
+
+    if(currentPlayer === "X"){
+        currentPlayer = "O";
+    }else{
+        currentPlayer = "X";
+    }
+
+    const currentPlayerEle = document.getElementById("currentPlayer");
+    currentPlayerEle.innerText = currentPlayer;
+
+    checkForWinner()
+}
+
+function resetBoard(){
+    board.fill(-1);
+    renderBoard();
+
+    currentPlayer = 'X';
+    const currentPlayerEle = document.getElementById("currentPlayer");
+    currentPlayerEle.innerText = currentPlayer;
+}
+
+function checkForWinner(){
+    
+}
