@@ -53,3 +53,25 @@ h1{
     font-weight: 600;
     cursor: pointer;
 }
+.img{
+    height: 50px;
+}
+
+@media screen and (max-width:500px) {
+    h1{
+        font-size: 40px;
+    }
+    .current-player{
+        font-size: 18px;
+    }
+    .box{
+        height: 70px;
+        width: 70px;
+    }
+    .reset-btn{
+        font-size: 15px;
+    }
+    .img{
+        height: 35px;
+    }
+}
